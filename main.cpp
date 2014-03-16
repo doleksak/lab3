@@ -7,6 +7,25 @@
 #include <ctime>
 using namespace std;
 
+/*!
+  \mainpage Benchmark
+
+   Aplikacja jest przykładem realizacji działań na tablicach i listach
+
+
+  \section etykieta-wazne-cechy Najważniejsze cechy
+
+  Program umozliwia pomiar czasu wykonywanej operacji dla zadanej liczby
+  powtorzen i zapisanie danych do pliku csv.
+
+  
+*/
+
+/*! \file Funkcja main
+ *
+ * Funkcja wywoluje metody zawarte w programie
+ */
+
 int main() 
 {
 	int powtorz=0;  /*liczba powtorzen operacji*/

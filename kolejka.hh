@@ -6,6 +6,11 @@
 #include <list>
 using namespace std;
 
+/*!
+ * \file
+ * \brief Definiuje klase kolejka i jej metody
+ */
+
 class kolejka
 {
 public:

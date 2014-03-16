@@ -6,6 +6,11 @@
 #include <stack>
 using namespace std;
 
+/*!
+ * \file
+ * \brief Definiuje klase stos i jej metody
+ */
+
 class stos
 {
 public:
@@ -24,6 +29,7 @@ public:
 	int size();
 	void wyswietl();
 	void podwoj();
+	void pocwiart();
 };
 
 #endif

@@ -1,12 +1,27 @@
 #include "stos.hh"
 using namespace std;
 
+/*!
+ * \file
+ * \brief Metody klasy stos
+ *
+ */
+
+/*! \brief Dodaje element na stos
+ * 
+ */
+
  void stos::push()
 {	
 		
 		stos::dodaj_element();
 
 }
+
+/*! \brief Wykonuje operacje powiekszenia tablicy o 1
+ * 
+ */
+
 
 void stos::dodaj_element()
 {
@@ -21,6 +36,11 @@ void stos::dodaj_element()
 	n++;
 }
 
+/*! \brief Wykonuje operacje podwojenia tablicy, gdy
+ *	liczba jej elementow ma przekroczyc rozmiar.
+ * 
+ */
+
 void stos::podwoj()
 { int m=n;
 	if ((m+1)>stos::ile())
@@ -31,10 +51,32 @@ void stos::podwoj()
 	}
 	else 
 	{
-		tab[n]=1;
+		tab[n+1]=1;
 		n++;
 	}
 }
+
+/*! \brief Wykonuje operacje zmniejszenia tablicy, gdy
+ *	liczba jej elementow stanowi 1/4 rozmiaru.
+ * 
+ */
+
+void stos::pocwiart()
+{ int m=n;
+	if ((m-1)<stos::ile()/4)
+	{
+		tab = new int[1/4*n];
+		n--;
+	}
+	else 
+	{
+		n--;
+	}
+}
+
+/*! \brief Wykonuje operacje zmniejszenia tablicy o 1.
+ * 
+ */
 
 void stos::usun_element() 
 	{
@@ -48,29 +90,45 @@ void stos::usun_element()
 	n--;
 	}
 
+/*! \brief Usuwa element.
+ * 
+ */
 
 void stos::pop()
 {
 	stos::usun_element();
 }
 
+/*! \brief Zwraca rozmiar tablicy.
+ * 
+ */
 
 int stos::ile()
 	{
 		return n;
 	}
 
+/*! \brief Zwraca wartosc logiczna czy stos jest pusty.
+ * 
+ */
+
 bool stos::isEmpty()
 	{
 		return (stos::ile()==0);
 	}
 
+/*! \brief Zwraca rozmiar stosu.
+ * 
+ */
 
 int  stos::size()
 	{
 		return stos::ile();
 	}
 
+/*! \brief Wyswietla stos.
+ * 
+ */
 
 void stos::wyswietl() 
 	{
