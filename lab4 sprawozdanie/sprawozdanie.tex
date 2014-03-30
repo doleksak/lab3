@@ -42,7 +42,18 @@ Wykresy zostały wygenerowane na podstawie pomiarów czasu sortowania losowo wyg
 Wykres 4. Porównanie wszystkich algorytmów sortowania \newline
 
 \includegraphics[scale=0.8]{./wiecejelem} \newline
-Wykres 5. Wykres Heapsort dla wiekszej liczby elementow obrazuje,\newline 
-że omawiane algorytmy mają liniowo-logarytmiczną złożoność czasową.  \newline
+Wykres 5. Wykres Heapsort dla wiekszej liczby elementow. \newline
+
+\includegraphics[scale=0.4]{./qopt} \newline
+Wykres 6. Wykres Quicksort dla wariantu sortowania do 100 mln losowo generowanych elementów. Algorytm wybiera skrajny element tablicy do podziału. \newpage
+
+\includegraphics[scale=0.6]{./qpes} \newline
+Wykres 7. Wykres Quicksort dla wariantu pesymistycznego- sortowanie do 100 tys już posortowanych elementów. Algorytm wybiera skrajny element tablicy do podziału. \newpage
+
+\includegraphics[scale=0.6]{./qmal} \newline
+Wykres 8. Wykres Quicksort dla wariantu pesymistycznego- sortowanie do 100 tys posortowanych elementów w kolejności malejącej. Algorytm wybiera skrajny element tablicy do podziału. \newpage
+
+\includegraphics[scale=0.6]{./qpn} \newline
+Wykres 9. Wykres Quicksort dla wariantu pesymistycznego- sortowanie do 20 mln już posortowanych elementów. Algorytm wybiera element do podziału poprzez losowanie. Pozwala to zniwelować prawdopodobieństwo wystąpienia kwadratowej złożoności obliczeniowej. Jednak dla przypadku, gdy dane wejściowe nie były posortowane, algorytm wybierania skrajnego elementu do podziału okazywał się szybszy.
 
 \end{document} 
