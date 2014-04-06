@@ -1,0 +1,142 @@
+\hypertarget{class_asc}{\section{\-Asc \-Class \-Reference}
+\label{class_asc}\index{\-Asc@{\-Asc}}
+}
+
+
+\-Klasa tablicy asocjacyjnej.  
+
+
+
+
+{\ttfamily \#include $<$asc.\-hh$>$}
+
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_asc_1_1_para}{\-Para}
+\begin{DoxyCompactList}\small\item\em \-Definiuje strukture \hyperlink{struct_asc_1_1_para}{\-Para}, ktora sklada sie z klucza typu string i jego wartosci jako typ int. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_asc_ab61fca727baefdc1bdc43b6934a9891d}{dodaj} (int wartosc, string klucz)
+\begin{DoxyCompactList}\small\item\em \-Dodaje pare klucz,wartosc do struktury danych std\-::vector. \end{DoxyCompactList}\item 
+void \hyperlink{class_asc_a1e6c884267c2cd16658fb579974e5836}{usun} (string klucz)
+\begin{DoxyCompactList}\small\item\em \-Usuwa pare klucz,wartosc na podstawie podanego klucza. \-Argumentem funkcji erase jest indeks, jaki element posiada w strukturze vector. \end{DoxyCompactList}\item 
+int \hyperlink{class_asc_ad1d5afbc2bab5ddcddaf5f9330c16e91}{pobierz} (string klucz)
+\begin{DoxyCompactList}\small\item\em \-Zwraca wartosc podanego klucza. \end{DoxyCompactList}\item 
+bool \hyperlink{class_asc_aef12f2bec43a87b241551ddb19c06ecd}{czypusta} ()
+\begin{DoxyCompactList}\small\item\em \-Zwraca wartosc logiczna true jezeli rozmiar struktury vector wynosi 0, w przeciwnym wypadku false. \end{DoxyCompactList}\item 
+int \hyperlink{class_asc_a45687a815410ce5ade4b7add6b264543}{zlicz} ()
+\begin{DoxyCompactList}\small\item\em \-Zwraca liczbe elementow, poslugujac sie funkcja size() ze std\-::vector. \end{DoxyCompactList}\item 
+void \hyperlink{class_asc_a09837df81add84668e2df9534a9ba019}{zastap} (int nowa, string klucz)
+\begin{DoxyCompactList}\small\item\em \-Przypisuje podanemu kluczowi nowa wartosc. \end{DoxyCompactList}\item 
+int \hyperlink{class_asc_aa6a29148b2e17fa303da21e8975c7f4f}{indeks} (string klucz)
+\begin{DoxyCompactList}\small\item\em \-Zwraca indeks elementu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \hyperlink{struct_asc_1_1_para}{\-Para} $>$ \hyperlink{class_asc_a44689e96c5fc42b779d682bb2cfdc10b}{tabasoc}
+\begin{DoxyCompactList}\small\item\em \-Definiuje strukture danych ze std\-::vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Klasa tablicy asocjacyjnej. 
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{class_asc_aef12f2bec43a87b241551ddb19c06ecd}{\index{\-Asc@{\-Asc}!czypusta@{czypusta}}
+\index{czypusta@{czypusta}!Asc@{\-Asc}}
+\subsubsection[{czypusta}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Asc\-::czypusta} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_asc_aef12f2bec43a87b241551ddb19c06ecd}
+
+
+\-Zwraca wartosc logiczna true jezeli rozmiar struktury vector wynosi 0, w przeciwnym wypadku false. 
+
+\hypertarget{class_asc_ab61fca727baefdc1bdc43b6934a9891d}{\index{\-Asc@{\-Asc}!dodaj@{dodaj}}
+\index{dodaj@{dodaj}!Asc@{\-Asc}}
+\subsubsection[{dodaj}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Asc\-::dodaj} (
+\begin{DoxyParamCaption}
+\item[{int}]{wartosc, }
+\item[{string}]{klucz}
+\end{DoxyParamCaption}
+)}}\label{class_asc_ab61fca727baefdc1bdc43b6934a9891d}
+
+
+\-Dodaje pare klucz,wartosc do struktury danych std\-::vector. 
+
+\hypertarget{class_asc_aa6a29148b2e17fa303da21e8975c7f4f}{\index{\-Asc@{\-Asc}!indeks@{indeks}}
+\index{indeks@{indeks}!Asc@{\-Asc}}
+\subsubsection[{indeks}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Asc\-::indeks} (
+\begin{DoxyParamCaption}
+\item[{string}]{klucz}
+\end{DoxyParamCaption}
+)}}\label{class_asc_aa6a29148b2e17fa303da21e8975c7f4f}
+
+
+\-Zwraca indeks elementu. 
+
+\hypertarget{class_asc_ad1d5afbc2bab5ddcddaf5f9330c16e91}{\index{\-Asc@{\-Asc}!pobierz@{pobierz}}
+\index{pobierz@{pobierz}!Asc@{\-Asc}}
+\subsubsection[{pobierz}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Asc\-::pobierz} (
+\begin{DoxyParamCaption}
+\item[{string}]{klucz}
+\end{DoxyParamCaption}
+)}}\label{class_asc_ad1d5afbc2bab5ddcddaf5f9330c16e91}
+
+
+\-Zwraca wartosc podanego klucza. 
+
+\hypertarget{class_asc_a1e6c884267c2cd16658fb579974e5836}{\index{\-Asc@{\-Asc}!usun@{usun}}
+\index{usun@{usun}!Asc@{\-Asc}}
+\subsubsection[{usun}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Asc\-::usun} (
+\begin{DoxyParamCaption}
+\item[{string}]{klucz}
+\end{DoxyParamCaption}
+)}}\label{class_asc_a1e6c884267c2cd16658fb579974e5836}
+
+
+\-Usuwa pare klucz,wartosc na podstawie podanego klucza. \-Argumentem funkcji erase jest indeks, jaki element posiada w strukturze vector. 
+
+\hypertarget{class_asc_a09837df81add84668e2df9534a9ba019}{\index{\-Asc@{\-Asc}!zastap@{zastap}}
+\index{zastap@{zastap}!Asc@{\-Asc}}
+\subsubsection[{zastap}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Asc\-::zastap} (
+\begin{DoxyParamCaption}
+\item[{int}]{nowa, }
+\item[{string}]{klucz}
+\end{DoxyParamCaption}
+)}}\label{class_asc_a09837df81add84668e2df9534a9ba019}
+
+
+\-Przypisuje podanemu kluczowi nowa wartosc. 
+
+\hypertarget{class_asc_a45687a815410ce5ade4b7add6b264543}{\index{\-Asc@{\-Asc}!zlicz@{zlicz}}
+\index{zlicz@{zlicz}!Asc@{\-Asc}}
+\subsubsection[{zlicz}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Asc\-::zlicz} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_asc_a45687a815410ce5ade4b7add6b264543}
+
+
+\-Zwraca liczbe elementow, poslugujac sie funkcja size() ze std\-::vector. 
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{class_asc_a44689e96c5fc42b779d682bb2cfdc10b}{\index{\-Asc@{\-Asc}!tabasoc@{tabasoc}}
+\index{tabasoc@{tabasoc}!Asc@{\-Asc}}
+\subsubsection[{tabasoc}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf \-Para}$>$ {\bf \-Asc\-::tabasoc}}}\label{class_asc_a44689e96c5fc42b779d682bb2cfdc10b}
+
+
+\-Definiuje strukture danych ze std\-::vector. 
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{asc_8hh}{asc.\-hh}\item 
+\hyperlink{asc_8cpp}{asc.\-cpp}\end{DoxyCompactItemize}
