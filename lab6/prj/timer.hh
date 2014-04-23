@@ -11,7 +11,7 @@ using namespace std;
  * \brief Definiuje klase timer i jej metody
  */
 
-/*! \brief Klasa timer służy do pomiaru czasu wykonywania programu
+/*! \brief Klasa timer mierzy i pozwala wyswietlic czas wykonywania programu
  * 
  */
 class timer

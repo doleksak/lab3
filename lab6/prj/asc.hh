@@ -18,7 +18,7 @@ class Asc
 	public:
 
 
-/*! \brief Definiuje strukture Para, ktora sklada sie
+/*! \brief Definiuje strukture Para, ktora sklada się
  * z klucza typu string i jego wartosci jako typ int.
  * 
  */

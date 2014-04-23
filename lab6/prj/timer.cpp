@@ -8,7 +8,7 @@ using namespace std;
  *
  */
 
-/*! \brief Rozpoczyna odliczanie czasu
+/*! \brief Rozpoczyna odliczanie czasu.
  * 
  */
 
@@ -17,7 +17,7 @@ void timer::start()
 clock_gettime(CLOCK_MONOTONIC, &m_start);
 }
 
-/*! \brief Konczy odliczanie czasu
+/*! \brief Konczy odliczanie czasu.
  * 
  */
 
@@ -26,7 +26,7 @@ void timer::stop()
 clock_gettime(CLOCK_MONOTONIC, &m_stop);
 }
 
-/*! \brief Zwraca roznice miedzy zakonczeniem i rozpoczeciem odliczania
+/*! \brief Zwraca roznice miedzy zakonczeniem i rozpoczeciem odliczania.
  * 
  */
 

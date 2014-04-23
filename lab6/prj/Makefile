@@ -1,8 +1,8 @@
-__start__: asoc
-	./asoc
+__start__: tasoc
+	./tasoc
 
-asoc: asc.o main.o timer.o drzewo.o hasz.o
-	c++ main.o asc.o timer.o drzewo.o hasz.o -o asoc -lrt
+tasoc: asc.o main.o timer.o drzewo.o hasz.o
+	c++ main.o asc.o timer.o drzewo.o hasz.o -o tasoc -lrt
 
 asc.o: asc.cpp
 	c++ -c asc.cpp -o asc.o
@@ -20,4 +20,4 @@ main.o: main.cpp
 	c++ -c main.cpp -o main.o
 
 clean:
-	rm -f *.o asoc
+	rm -f *.o tasoc
