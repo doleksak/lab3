@@ -9,7 +9,14 @@
 using namespace std;
 
 
+/*!
+ * \file
+ * \brief Definiuje klase hasztab i jej metody
+ */
 
+/*! \brief Klasa tablicy mieszajacej
+ * 
+ */
 class hasztab
 {
     list <pair<string,int> > table[127];

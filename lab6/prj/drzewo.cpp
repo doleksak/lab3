@@ -6,6 +6,16 @@
 
 using namespace std;
 
+/*!
+ * \file
+ * \brief Metody klasy drzewo
+ *
+ */
+
+/*! \brief Metoda wstawiajaca wezel. Jezeli wartosc sie powtorzy, nie dokonuje sie zmian.
+ *  Jeżeli wartosc mniejsza od rodzica, wstawiamy po lewej stronie.
+ * 
+ */
 void drzewo::insertNode(node*& tree, int value)
 {
     if (!tree)
@@ -24,31 +34,41 @@ void drzewo::insertNode(node*& tree, int value)
         insertNode(tree->right, value);
 }
 
-
+/*! \brief Do obiektu root klasy drzewo przypisujemy null
+ * 
+ */
 drzewo::drzewo()
 {
     this->root = NULL;
 }
 
+/*! \brief Metoda dodajaca element do drzewa
+ * 
+ */
 void drzewo::insert(int value)
 {
     insertNode(root, value);
 }
 
-bool drzewo::search(int value) const
+/*! \brief Metoda wyszukujaca wartosc zaczynajac od korzenia, przesuwając sie tylko po odpowiednich lisciach.
+ * Gdy wartosc mniejsza od liscia, przsuwamy sie po lewej stronie. 
+ * 
+ */
+int drzewo::search(int value) const
 {
     node* tree = root;
-    
+    int i=1;
     while (tree)
-    {
+    {   
         if (tree->value == value)
-            return true;
+            return i;
         
         else if(value < tree->value)
-            tree = tree->right;
+            tree = tree->left;
         
         else
             tree = tree->right;
+            i++; 
     }
     return false;
 }

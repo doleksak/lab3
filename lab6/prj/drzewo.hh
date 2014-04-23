@@ -6,6 +6,14 @@
 
 using namespace std;
 
+/*!
+ * \file
+ * \brief Definiuje klase drzewo i jej metody
+ */
+
+/*! \brief Klasa drzewa poszukiwan binarnych
+ * 
+ */
 class drzewo
 {
 private:
@@ -15,6 +23,9 @@ private:
         int value;
         node* left;
         node* right;
+
+        /* Konstruktor wezla */
+
         node(int value1, node* left1 = NULL, node* right1 = NULL)
         {
             value = value1;
@@ -24,14 +35,19 @@ private:
         
     };
 
+
+    /* Korzen */
     node* root;
       
+      /* Metoda wstawiajaca wezel */
     void insertNode(node*&, int);
     
     public:
     drzewo();
+    /* Metoda wstawiajaca wartosc */
     void insert(int value);
-    bool search(int value) const;  
+    /* Metoda wyszukujaca wartosc */
+    int search(int value) const;  
 };
 
 

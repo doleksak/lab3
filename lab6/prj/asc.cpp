@@ -3,11 +3,7 @@
 
 using namespace std;
 
-/*!
- * \file
- * \brief Metody klasy Asc
- *
- */
+
 
 /*! \brief Dodaje pare klucz,wartosc do struktury danych std::vector
  * 

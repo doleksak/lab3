@@ -8,13 +8,31 @@
 
 using namespace std;
 
+/*!
+  \mainpage Struktury
 
+   Aplikacja jest przykładem implementacji struktur drzewa poszukiwań binarnych, tablicy asocjacyjnej i mieszającej.
+
+
+  \section etykieta-wazne-cechy Najważniejsze cechy
+
+  Program umozliwia pomiar czasu pobrania klucza dla zadanej liczby
+  elementow. Operacje wykonywane są na:
+  drzewie poszukiwań binarnych, tablicy asocjacyjnej, tablicy mieszającej.
+
+  
+*/
+
+/*! \file Funkcja main
+ *
+ * Funkcja wywoluje metody zawarte w programie
+ */
 
 int main()
 {
 srand (time(NULL));
 Asc Tablica;
-int j, cz;
+int j, cz, k;
 timer t;
 drzewo d;
 
@@ -26,36 +44,36 @@ cout<<"Podaj liczbe elementow: "<<endl;
 cin>>j;
 
 
-/* hash
+/* hash */
+st = "klucz";
 for (int i = 0; i < j-1; i++)
 { 
-st = "klucz";
-  ht.add(st, i);
+  ht.add(st+="a", i);
 }
-  ht.add("koniec", j);
+ // ht.add(st+="b", j);
 
 t.start();
-ht.find("koniec");
+ht.find(st);
 t.stop();
-*/
 
 
 
 
-/* drzewo
-for (int i = 0; i < j; i++)
+
+/* drzewo 
+for (int i = 1; i < j; i++)
 {
   d.insert(i);
 }
 
 t.start();
-d.search(j-3);
+k=d.search(j-1);
 t.stop();
+cout<<k<<endl;
 */
 
 
-
- 
+ /*
 for (int i = 0; i < j-1; i++)
 { 
 string a = "klucz";
@@ -66,7 +84,7 @@ Tablica.dodaj(j+1, "koniec");
 t.start();
 Tablica.pobierz("koniec");
 t.stop();
-
+*/
 
 
 
