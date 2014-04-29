@@ -19,7 +19,7 @@ int hasztab::hash(string key)
         val=(int)key[i];
         sum+=val<<4;  //mnożenie val przez 2^4, dodanie i przypisanie do sum
     }
-    index=sum%127; //reszta z dzielenia sum przez 127
+    index=sum%7; //reszta z dzielenia sum przez 100027
     return index;
 }
 

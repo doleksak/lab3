@@ -19,7 +19,7 @@ using namespace std;
  */
 class hasztab
 {
-    list <pair<string,int> > table[127];
+    list <pair<string,int> > table[7]; //100027
 
     public:
         int hash(string key);

@@ -46,40 +46,41 @@ cin>>j;
 
 /* hash */
 st = "klucz";
+
 for (int i = 0; i < j-1; i++)
 { 
   ht.add(st+="a", i);
 }
- // ht.add(st+="b", j);
-
+  ht.add("kluczb", j);
+  
 t.start();
-ht.find(st);
+ht.find("kluczb");
 t.stop();
-
 
 
 
 
 /* drzewo 
+int h;
 for (int i = 1; i < j; i++)
 {
   d.insert(i);
 }
-
+d.insert(j);
 t.start();
-k=d.search(j-1);
+k=d.search(j);
 t.stop();
 cout<<k<<endl;
-*/
 
+*/
 
  /*
 for (int i = 0; i < j-1; i++)
 { 
 string a = "klucz";
-  Tablica.dodaj(i, a);
+  Tablica.dodaj(i, a+="a");
 }
-Tablica.dodaj(j+1, "koniec");
+Tablica.dodaj(j, "koniec");
 
 t.start();
 Tablica.pobierz("koniec");
