@@ -42,8 +42,10 @@ void dodaj_krawedz();
 void usun_krawedz(int V1, int V2);
 void usun_wierzcholek(int V);
 void wyswietl(); 
-void DFSUnreach(int v, bool visited[]);
-void DFS(int V); 
+void DFSUnreach(int v, int Vend, bool visited[]);
+void DFS(int V, int Vend);
+void BFS(int V, int Vend);
+
 Graf(){lista_sasiadujaca = new vector<Wierzcholek>[50]; lista_sasiedztwa = new vector<int>[50];}
 ~Graf();
 };

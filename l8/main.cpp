@@ -11,7 +11,7 @@ using namespace std;
 int main()
 {
 	Graf tab1;
-	int V, l;
+	int V, l, Vend;
 
 
 	cout<<"Podaj rozmiar grafu: "<<endl;
@@ -29,17 +29,18 @@ tab1.dodaj_krawedz();
 
 
 int V1, V2;
+/*
 cout<<"Podaj V1 czy sasiad: "<<endl;
 	cin>>V1;
 	cout<<"Podaj V2 czy sasiad: "<<endl;
 	cin>>V2;
 tab1.czy_sasiad(V1, V2);
-
-
+*/
+/*
 cout<<"Podaj wierzcholek dla ktorego wyswietlic sasiedztwo: "<<endl;
 	cin>>V;
 tab1.sasiedztwo(V);
-
+*/
 
 
 
@@ -58,6 +59,15 @@ cout<<"Podaj V1 do usuniecua krawedzi: "<<endl;
 tab1.usun_krawedz(V1, V2);  */
 tab1.wyswietl();
 
-tab1.DFS(1);
+
+
+
+
+cout<<"Podaj V startowe: "<<endl;
+	cin>>V;
+	cout<<"Podaj Vend koncowe: "<<endl;
+	cin>>Vend;
+//tab1.DFS(V, Vend);
+tab1.BFS(V, Vend);
 
 }

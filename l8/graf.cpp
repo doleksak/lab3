@@ -1,6 +1,8 @@
 #include "graf.hh"
 #include <iostream>
 #include <vector>
+#include <list>
+#include <cstdlib>
 
 using namespace std;
 
@@ -105,26 +107,94 @@ void Graf::usun_wierzcholek(int V)
 			
 }
 
-void Graf::DFSUnreach(int V, bool visited[])
-{
+void ex (void)
+	{
+  cout<<" - sciezka przeszukiwania."<<endl;
+	}
+
+
+void Graf::DFSUnreach(int V, int Vend, bool visited[])
+{	
     visited[V] = true;
+
     cout << V << " ";
+    if(V==Vend)
+    {               
+  at_quick_exit (ex);
+  quick_exit (EXIT_SUCCESS);
+    }
+    
     vector<int>::iterator i;
     for(i = lista_sasiedztwa[V].begin(); i != lista_sasiedztwa[V].end(); i++)
-        if(!visited[*i])
-            DFSUnreach(*i, visited);
+		if(!visited[*i])               
+        DFSUnreach(*i, Vend, visited);       
+        
+        
+    
 }
 
-void Graf::DFS(int V)
+void Graf::DFS(int V, int Vend)
 {	
     bool *visited = new bool[V];
     for(int i = 0; i < V; i++)
         visited[i] = false;
-    DFSUnreach(V, visited);
+    DFSUnreach(V, Vend, visited);
     cout<<endl;
 }
+
+
+void Graf::BFS(int V, int Vend)
+{
+    bool *visited = new bool[V];
+    for(int i = 0; i < V; i++)
+        visited[i] = false;
+ 
+    list<int> queue;
+ 
+    visited[V] = true;
+    queue.push_back(V);
+ 
+    vector<int>::iterator i;
+ 
+    while(!queue.empty())
+    {        
+        V = queue.front();
+        cout << V << " ";
+
+        if(V==Vend)
+    {               
+  at_quick_exit (ex);
+  quick_exit (EXIT_SUCCESS);
+    }
+
+        queue.pop_front();
+ 
+        for(i = lista_sasiedztwa[V].begin(); i != lista_sasiedztwa[V].end(); i++)
+        {
+            if(!visited[*i])
+            {
+                visited[*i] = true;
+                queue.push_back(*i);
+            }
+        }
+    }
+    cout<<endl;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 Graf::~Graf()
 {
 	delete[] lista_sasiadujaca;
 }
+
