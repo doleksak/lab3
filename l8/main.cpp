@@ -10,64 +10,41 @@ using namespace std;
 
 int main()
 {
-	Graf tab1;
-	int V, l, Vend;
+	Graf tab1, tab2, tab3;
+	int V, V1, V2, l, Vend, cz;
+	timer t;
 
 
-	cout<<"Podaj rozmiar grafu: "<<endl;
-	cin>>l;
+tab2.dodaj_krawedz(1,2,3);
+tab2.dodaj_krawedz(1,3,4);
+tab2.dodaj_krawedz(1,7,3);
 
-for (int i = 0; i < l; i++)
-{	cout<<"Podaj wierzcholek: "<<endl;
-	cin>>V;
-	tab1.dodaj_wierzcholek(V);
-}
-tab1.dodaj_krawedz();
-tab1.dodaj_krawedz();
-tab1.dodaj_krawedz();
-tab1.dodaj_krawedz();
+tab3.dodaj_krawedz(1,2,3);
+tab3.dodaj_krawedz(1,3,4);
+tab3.dodaj_krawedz(1,7,3);
 
-
-int V1, V2;
-/*
-cout<<"Podaj V1 czy sasiad: "<<endl;
-	cin>>V1;
-	cout<<"Podaj V2 czy sasiad: "<<endl;
-	cin>>V2;
-tab1.czy_sasiad(V1, V2);
-*/
-/*
-cout<<"Podaj wierzcholek dla ktorego wyswietlic sasiedztwo: "<<endl;
-	cin>>V;
-tab1.sasiedztwo(V);
-*/
+tab1.add_node(1);
+tab1.add_node(2);
+tab1.add_node(3);
+tab1.add_node(7);
+tab1.add_edge(1,2,3);
+tab1.add_edge(1,3,4);
+tab1.add_edge(1,7,3);
 
 
+t.start();
+tab1.A_star(1,7);
+t.stop();
+cz = t.elapsed_us();
+cout<<"Czas: "<<cz<<" mikrosekund"<<endl;
 
-/*
-cout<<"Podaj wierzcholek do usuniecia: "<<endl;
-	cin>>V;
-tab1.usun_wierzcholek(V);
-*/
 
-
-/*
-cout<<"Podaj V1 do usuniecua krawedzi: "<<endl;
-	cin>>V1;
-	cout<<"Podaj V2 do usuniecua krawedzi: "<<endl;
-	cin>>V2;
-tab1.usun_krawedz(V1, V2);  */
-tab1.wyswietl();
+tab2.DFS(1,7);
 
 
 
 
+//tab3.BFS(1,7);
 
-cout<<"Podaj V startowe: "<<endl;
-	cin>>V;
-	cout<<"Podaj Vend koncowe: "<<endl;
-	cin>>Vend;
-//tab1.DFS(V, Vend);
-tab1.BFS(V, Vend);
 
 }

@@ -51,16 +51,8 @@ void Graf::dodaj_wierzcholek(int V)
 		lista_sasiedztwa[V].push_back(V);
 }
 
-void Graf::dodaj_krawedz()
+void Graf::dodaj_krawedz(int V1, int V2, int waga)
 {
-int V1, V2, waga;
-
-cout<<"Podaj V1: "<<endl;
-	cin>>V1;
-	cout<<"Podaj V2: "<<endl;
-	cin>>V2;
-	cout<<"Podaj wage: "<<endl;
-	cin>>waga;
 
 
 Wierzcholek kraw;
@@ -80,7 +72,7 @@ if (V1 != V2)
 				 
 }
 
-void Graf::usun_krawedz(int V1, int V2) /* tymczasowo */
+void Graf::usun_krawedz(int V1, int V2)
 {
 Wierzcholek kraw;
 kraw.waga = 0;
@@ -113,7 +105,7 @@ void ex (void)
 	}
 
 
-void Graf::DFSUnreach(int V, int Vend, bool visited[])
+void Graf::Depth(int V, int Vend, bool visited[])
 {	
     visited[V] = true;
 
@@ -127,7 +119,7 @@ void Graf::DFSUnreach(int V, int Vend, bool visited[])
     vector<int>::iterator i;
     for(i = lista_sasiedztwa[V].begin(); i != lista_sasiedztwa[V].end(); i++)
 		if(!visited[*i])               
-        DFSUnreach(*i, Vend, visited);       
+        Depth(*i, Vend, visited);       
         
         
     
@@ -138,7 +130,7 @@ void Graf::DFS(int V, int Vend)
     bool *visited = new bool[V];
     for(int i = 0; i < V; i++)
         visited[i] = false;
-    DFSUnreach(V, Vend, visited);
+    Depth(V, Vend, visited);
     cout<<endl;
 }
 
@@ -182,19 +174,130 @@ void Graf::BFS(int V, int Vend)
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 Graf::~Graf()
 {
 	delete[] lista_sasiadujaca;
 }
 
+
+Graf::Graf(int wielkosc)
+{
+nodes = 0;
+lista.resize(wielkosc,NULL);
+}
+
+
+void Graf::add_edge(int V1, int V2, int c)
+{
+if(this->lista[V1]!= NULL && this->lista[V2]!= NULL)
+{
+pathfind* wskaznik = this->lista[V1]->sasiedzi;
+while(wskaznik->nast!=NULL)
+{
+if(wskaznik->neighbour == V2)
+{
+return;
+}
+wskaznik = wskaznik->nast;
+}
+wskaznik->nast = new pathfind;
+wskaznik->neighbour = V2;
+wskaznik->koszt = c;
+}
+else
+cout<<"Blad"<<endl;
+}
+
+void Graf::add_node(int V)
+{
+int wielkosc_tablicy = this->lista.capacity();
+if(V>wielkosc_tablicy)
+{
+vector<node*> nowy;
+nowy.reserve(V*2);
+for(int i = 1;i<V*2;++i)
+{
+if(i<wielkosc_tablicy)
+nowy[i] = lista[i];
+else
+nowy[i] = NULL;
+}
+lista.swap(nowy);
+}
+if(this->lista[V]==NULL)
+{
+this->lista[V] = new node;
+nodes += 1;
+}
+else
+cout<<"Blad"<<endl;
+}
+
+
+int Graf::A_star(int V1, int V2)
+{
+list<int> closed_list;
+list<int> open_list;
+pathfind* wskaznik;
+list<int>::iterator iter;
+list<int>::iterator temporary;
+int tmp;
+bool tmp1, tmp2;
+int suma_min = INT_MAX;
+int vert;
+
+if(this->lista[V1] != NULL && this->lista[V2] != NULL)
+{
+open_list.push_back(V1);
+while(!open_list.empty())
+{
+for( iter=open_list.begin(); iter != open_list.end(); ++iter )
+if(this->lista[*iter]->suma<suma_min)
+{
+vert = *iter;
+temporary = iter;
+cout<<vert<<endl;
+}
+open_list.erase(temporary);
+closed_list.push_back(vert);
+wskaznik = this->lista[vert]->sasiedzi;
+if(vert==V2)
+return 1;
+while(wskaznik->nast!=NULL)
+{
+tmp1 = tmp2 = false;
+for( iter=closed_list.begin(); iter != closed_list.end(); ++iter )
+if(*iter==wskaznik->neighbour)
+tmp1 = true;
+for( iter=open_list.begin(); iter != open_list.end(); ++iter )
+if(*iter==wskaznik->neighbour)
+tmp2 = true;
+if(tmp1) {}
+else if(!tmp2)
+{
+open_list.push_back(wskaznik->neighbour);
+this->lista[wskaznik->neighbour]->rodzic = vert;
+this->lista[wskaznik->neighbour]->distance = wskaznik->koszt;
+this->lista[wskaznik->neighbour]->szac = (this->lista[wskaznik->neighbour]->szac+wskaznik->koszt)/1.5;
+this->lista[wskaznik->neighbour]->suma = this->lista[wskaznik->neighbour]->szac+
+this->lista[wskaznik->neighbour]->distance;
+}
+else
+{
+tmp = this->lista[wskaznik->neighbour]->distance + wskaznik->koszt;
+if(tmp<this->lista[wskaznik->neighbour]->distance)
+{
+this->lista[wskaznik->neighbour]->rodzic = vert;
+this->lista[wskaznik->neighbour]->distance = tmp;
+this->lista[wskaznik->neighbour]->suma = this->lista[wskaznik->neighbour]->szac+
+this->lista[wskaznik->neighbour]->distance;
+}
+}
+wskaznik = wskaznik->nast;
+}
+}
+}
+else
+cout<<"Blad"<<endl;
+return 0;
+}
