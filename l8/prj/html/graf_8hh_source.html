@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Graf: Plik źródłowy graf.hh</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Graf
+   &#160;<span id="projectnumber">beta</span>
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Wygenerowano przez Doxygen 1.7.6.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Strona&#160;główna</span></a></li>
+      <li><a href="annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;plików</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">graf.hh</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="graf_8hh.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef GRAF_HH</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define GRAF_HH</span>
+<a name="l00003"></a>00003 <span class="preprocessor"></span><span class="preprocessor">#include &lt;vector&gt;</span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;cstdlib&gt;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include &lt;utility&gt;</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include &lt;algorithm&gt;</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include &lt;climits&gt;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &lt;list&gt;</span>
+<a name="l00011"></a>00011 
+<a name="l00012"></a>00012  <span class="keyword">using namespace </span>std;
+<a name="l00013"></a>00013 
+<a name="l00022"></a><a class="code" href="class_krawedz.html">00022</a> <span class="keyword">class </span><a class="code" href="class_krawedz.html" title="Klasa Krawedz.">Krawedz</a>
+<a name="l00023"></a>00023 {
+<a name="l00024"></a>00024 <span class="keyword">public</span>:
+<a name="l00025"></a>00025     <span class="keywordtype">int</span> poczatek;
+<a name="l00026"></a>00026     <span class="keywordtype">int</span> koniec;
+<a name="l00027"></a>00027     <span class="keywordtype">int</span> w;
+<a name="l00028"></a>00028 };
+<a name="l00032"></a><a class="code" href="class_wierzcholek.html">00032</a> <span class="keyword">class </span><a class="code" href="class_wierzcholek.html" title="Klasa Wierzcholek.">Wierzcholek</a>  
+<a name="l00033"></a>00033 {
+<a name="l00034"></a>00034 <span class="keyword">public</span>:
+<a name="l00035"></a>00035     <span class="keywordtype">int</span> sasiad;
+<a name="l00036"></a>00036     <span class="keywordtype">int</span> waga;
+<a name="l00037"></a>00037     <a class="code" href="class_wierzcholek.html" title="Klasa Wierzcholek.">Wierzcholek</a>(){ sasiad = 0; waga = 0; };
+<a name="l00038"></a>00038 };
+<a name="l00042"></a><a class="code" href="class_graf.html">00042</a> <span class="keyword">class </span><a class="code" href="class_graf.html" title="Klasa Graf wykorzystywana w programie.">Graf</a>
+<a name="l00043"></a>00043 {
+<a name="l00044"></a>00044 <span class="keyword">public</span>:
+<a name="l00045"></a>00045     <span class="keywordtype">int</span> V; 
+<a name="l00046"></a>00046     <span class="keywordtype">int</span> E;
+<a name="l00047"></a>00047     vector&lt;Wierzcholek&gt; *lista_sasiadujaca;
+<a name="l00048"></a>00048     vector&lt;int&gt; *lista_sasiedztwa;    
+<a name="l00049"></a>00049 
+<a name="l00050"></a>00050 <span class="keywordtype">void</span> czy_sasiad(<span class="keywordtype">int</span> V1, <span class="keywordtype">int</span> V2);
+<a name="l00051"></a>00051 <span class="keywordtype">void</span> sasiedztwo(<span class="keywordtype">int</span> V);
+<a name="l00052"></a>00052 <span class="keywordtype">void</span> dodaj_wierzcholek(<span class="keywordtype">int</span> V);
+<a name="l00053"></a>00053 <span class="keywordtype">void</span> dodaj_krawedz(<span class="keywordtype">int</span> V1, <span class="keywordtype">int</span> V2, <span class="keywordtype">int</span> waga);
+<a name="l00054"></a>00054 <span class="keywordtype">void</span> usun_krawedz(<span class="keywordtype">int</span> V1, <span class="keywordtype">int</span> V2);
+<a name="l00055"></a>00055 <span class="keywordtype">void</span> usun_wierzcholek(<span class="keywordtype">int</span> V);
+<a name="l00056"></a>00056 <span class="keywordtype">void</span> wyswietl(); 
+<a name="l00057"></a>00057 <span class="keywordtype">void</span> Depth(<span class="keywordtype">int</span> v, <span class="keywordtype">int</span> Vend, <span class="keywordtype">bool</span> visited[]);
+<a name="l00058"></a>00058 <span class="keywordtype">void</span> DFS(<span class="keywordtype">int</span> V, <span class="keywordtype">int</span> Vend);
+<a name="l00059"></a>00059 <span class="keywordtype">void</span> BFS(<span class="keywordtype">int</span> V, <span class="keywordtype">int</span> Vend);
+<a name="l00060"></a>00060 <span class="keywordtype">void</span> add_node(<span class="keywordtype">int</span> V);
+<a name="l00061"></a>00061 <span class="keywordtype">void</span> add_edge(<span class="keywordtype">int</span> V1, <span class="keywordtype">int</span> V2, <span class="keywordtype">int</span> c);
+<a name="l00062"></a>00062 <span class="keywordtype">int</span> A_star(<span class="keywordtype">int</span> V1, <span class="keywordtype">int</span> V2);
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064 <a class="code" href="class_graf.html" title="Klasa Graf wykorzystywana w programie.">Graf</a>(){lista_sasiadujaca = <span class="keyword">new</span> vector&lt;Wierzcholek&gt;[50]; lista_sasiedztwa = <span class="keyword">new</span> vector&lt;int&gt;[50]; nodes = 0;
+<a name="l00065"></a>00065 lista.resize(10,NULL);}
+<a name="l00066"></a>00066 <a class="code" href="class_graf.html" title="Klasa Graf wykorzystywana w programie.">Graf</a>(<span class="keywordtype">int</span> wielkosc);
+<a name="l00067"></a>00067 ~<a class="code" href="class_graf.html" title="Klasa Graf wykorzystywana w programie.">Graf</a>();
+<a name="l00071"></a><a class="code" href="struct_graf_1_1pathfind.html">00071</a> <span class="keyword">struct </span><a class="code" href="struct_graf_1_1pathfind.html" title="Struktura należąca do klasy Graf, pozwalająca na realizację algorytmu A*.">pathfind</a>
+<a name="l00072"></a>00072 {
+<a name="l00073"></a>00073 <a class="code" href="struct_graf_1_1pathfind.html" title="Struktura należąca do klasy Graf, pozwalająca na realizację algorytmu A*.">pathfind</a>* nast;
+<a name="l00074"></a>00074 <span class="keywordtype">int</span> neighbour;
+<a name="l00075"></a>00075 <span class="keywordtype">int</span> koszt;
+<a name="l00076"></a>00076 <a class="code" href="struct_graf_1_1pathfind.html" title="Struktura należąca do klasy Graf, pozwalająca na realizację algorytmu A*.">pathfind</a>()
+<a name="l00077"></a>00077 {neighbour = 0;koszt = 0;nast = NULL;}
+<a name="l00078"></a>00078 };
+<a name="l00082"></a><a class="code" href="struct_graf_1_1node.html">00082</a> <span class="keyword">struct </span><a class="code" href="struct_graf_1_1node.html" title="Struktura należąca do klasy Graf, pozwalająca na realizację algorytmu A*, poprzez zmianę stałych...">node</a>
+<a name="l00083"></a>00083 {
+<a name="l00084"></a>00084 <a class="code" href="struct_graf_1_1pathfind.html" title="Struktura należąca do klasy Graf, pozwalająca na realizację algorytmu A*.">pathfind</a>* sasiedzi;
+<a name="l00085"></a>00085 <span class="keywordtype">float</span> distance;
+<a name="l00086"></a>00086 <span class="keywordtype">float</span> szac;
+<a name="l00087"></a>00087 <span class="keywordtype">int</span> rodzic;
+<a name="l00088"></a>00088 <span class="keywordtype">float</span> suma;
+<a name="l00089"></a>00089 <a class="code" href="struct_graf_1_1node.html" title="Struktura należąca do klasy Graf, pozwalająca na realizację algorytmu A*, poprzez zmianę stałych...">node</a>()
+<a name="l00090"></a>00090 {suma = 0;szac = 5;distance = 10;rodzic = 0;sasiedzi = <span class="keyword">new</span> <a class="code" href="struct_graf_1_1pathfind.html" title="Struktura należąca do klasy Graf, pozwalająca na realizację algorytmu A*.">pathfind</a>;}
+<a name="l00091"></a>00091 };
+<a name="l00092"></a>00092     vector&lt;node*&gt; lista;
+<a name="l00093"></a>00093     <span class="keywordtype">int</span> nodes;   
+<a name="l00094"></a>00094 };
+<a name="l00095"></a>00095 
+<a name="l00096"></a>00096 <span class="preprocessor">#endif</span>
+</pre></div></div><!-- contents -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klasy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Pliki</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funkcje</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano Wed May 28 2014 02:59:39 dla Graf programem &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>

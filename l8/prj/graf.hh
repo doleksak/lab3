@@ -11,6 +11,14 @@
 
  using namespace std;
 
+/*!
+ * \file
+ * \brief Definiuje klasy Krawedz, Wierzcholek oraz Graf i ich metody
+ */
+
+/*! \brief Klasa Krawedz
+ * 
+ */
 class Krawedz
 {
 public:
@@ -18,7 +26,9 @@ public:
     int koniec;
     int w;
 };
-
+/*! \brief Klasa Wierzcholek
+ * 
+ */
 class Wierzcholek  
 {
 public:
@@ -26,7 +36,9 @@ public:
     int waga;
     Wierzcholek(){ sasiad = 0; waga = 0; };
 };
-
+/*! \brief Klasa Graf wykorzystywana w programie
+ * 
+ */
 class Graf
 {
 public:
@@ -53,7 +65,9 @@ Graf(){lista_sasiadujaca = new vector<Wierzcholek>[50]; lista_sasiedztwa = new v
 lista.resize(10,NULL);}
 Graf(int wielkosc);
 ~Graf();
-
+/*! \brief Struktura należąca do klasy Graf, pozwalająca na realizację algorytmu A*
+ * 
+ */
 struct pathfind
 {
 pathfind* nast;
@@ -62,14 +76,16 @@ int koszt;
 pathfind()
 {neighbour = 0;koszt = 0;nast = NULL;}
 };
-
+/*! \brief Struktura należąca do klasy Graf, pozwalająca na realizację algorytmu A*, poprzez zmianę stałych, które pełnią rolę funkcji heurystycznej
+ * 
+ */
 struct node
 {
 pathfind* sasiedzi;
 float distance;
 float szac;
-float suma;
 int rodzic;
+float suma;
 node()
 {suma = 0;szac = 5;distance = 10;rodzic = 0;sasiedzi = new pathfind;}
 };

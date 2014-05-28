@@ -6,9 +6,15 @@
 
 using namespace std;
 
+/*!
+ * \file
+ * \brief Metody klasy Graf
+ *
+ */
 
-
-
+/*! \brief Funkcja pozwala wyświetlić graf w postaci listy sąsiadów
+ * 
+ */
 void Graf::wyswietl()
 {
 	for (int i = 0; i <50; i++)
@@ -22,7 +28,9 @@ void Graf::wyswietl()
 	cout << endl;
 }
 
-
+/*! \brief Funkcja pozwala na sprawdzenie czy podane wierzchołki sąsiadują ze sobą
+ * 
+ */
 void Graf::czy_sasiad(int V1, int V2)
 {
 for (vector<int>::iterator it = lista_sasiedztwa[V1].begin(); it != lista_sasiedztwa[V1].end(); it++)
@@ -33,7 +41,9 @@ for (vector<int>::iterator it = lista_sasiedztwa[V1].begin(); it != lista_sasied
 			}			
 		}
 }
-
+/*! \brief Funkcja pozwala na wypisanie sąsiadów podanego wierzchołka
+ * 
+ */
 void Graf::sasiedztwo(int V)
 {
 	cout << "Sasiedztwo z: ";
@@ -45,12 +55,16 @@ for (vector<int>::iterator it = lista_sasiedztwa[V].begin(); it != lista_sasiedz
 		}
 		cout<<endl;
 }
-
+/*! \brief Funkcja pozwala dodać wierzchołek do listy
+ * 
+ */
 void Graf::dodaj_wierzcholek(int V)
 { 
 		lista_sasiedztwa[V].push_back(V);
 }
-
+/*! \brief Funkcja pozwala dodać krawędź
+ * 
+ */
 void Graf::dodaj_krawedz(int V1, int V2, int waga)
 {
 
@@ -71,7 +85,9 @@ if (V1 != V2)
 		}
 				 
 }
-
+/*! \brief Funkcja pozwala usunąć podaną krawędź
+ * 
+ */
 void Graf::usun_krawedz(int V1, int V2)
 {
 Wierzcholek kraw;
@@ -89,7 +105,9 @@ if (V1 != V2)
 			lista_sasiedztwa[V2].push_back(0);
 		}
 }
-
+/*! \brief Funkcja pozwala usunąć podany wierzchołek
+ * 
+ */
 void Graf::usun_wierzcholek(int V)
 {
 	for (int i = 0; i < V; i++)
@@ -104,7 +122,9 @@ void ex (void)
   cout<<" - sciezka przeszukiwania."<<endl;
 	}
 
-
+/*! \brief Funkcja pomocnicza przy przeszukiwaniu w głąb
+ * 
+ */
 void Graf::Depth(int V, int Vend, bool visited[])
 {	
     visited[V] = true;
@@ -124,7 +144,9 @@ void Graf::Depth(int V, int Vend, bool visited[])
         
     
 }
-
+/*! \brief Wywołanie tej funkcji rozpoczyna trawersację grafu metodą w głąb
+ * 
+ */
 void Graf::DFS(int V, int Vend)
 {	
     bool *visited = new bool[V];
@@ -134,7 +156,9 @@ void Graf::DFS(int V, int Vend)
     cout<<endl;
 }
 
-
+/*! \brief Funkcja pozwala na przeszukiwanie grafu wszerz
+ * 
+ */
 void Graf::BFS(int V, int Vend)
 {
     bool *visited = new bool[V];
@@ -173,20 +197,26 @@ void Graf::BFS(int V, int Vend)
     cout<<endl;
 }
 
-
+/*! \brief Destruktor usuwa utworzoną wcześniej listę
+ * 
+ */
 Graf::~Graf()
 {
 	delete[] lista_sasiadujaca;
 }
 
-
+/*! \brief Konstruktor tworzy listę przy inicjalizacji obiektu klasy Graf
+ * 
+ */
 Graf::Graf(int wielkosc)
 {
 nodes = 0;
 lista.resize(wielkosc,NULL);
 }
 
-
+/*! \brief Funkcja pozwala na dodanie krawędzi uwzględniając jej wagę
+ * 
+ */
 void Graf::add_edge(int V1, int V2, int c)
 {
 if(this->lista[V1]!= NULL && this->lista[V2]!= NULL)
@@ -208,6 +238,9 @@ else
 cout<<"Blad"<<endl;
 }
 
+/*! \brief Funkcja pozwala na utworzenie węzła
+ * 
+ */
 void Graf::add_node(int V)
 {
 int wielkosc_tablicy = this->lista.capacity();
@@ -233,7 +266,9 @@ else
 cout<<"Blad"<<endl;
 }
 
-
+/*! \brief Funkcja rozpoczynająca algorytm A*
+ * 
+ */
 int Graf::A_star(int V1, int V2)
 {
 list<int> closed_list;
@@ -243,7 +278,7 @@ list<int>::iterator iter;
 list<int>::iterator temporary;
 int tmp;
 bool tmp1, tmp2;
-int suma_min = INT_MAX;
+int suma_min = 20;
 int vert;
 
 if(this->lista[V1] != NULL && this->lista[V2] != NULL)
@@ -261,25 +296,20 @@ cout<<vert<<endl;
 open_list.erase(temporary);
 closed_list.push_back(vert);
 wskaznik = this->lista[vert]->sasiedzi;
-if(vert==V2)
-return 1;
+if(vert==V2) return 1;
 while(wskaznik->nast!=NULL)
 {
 tmp1 = tmp2 = false;
-for( iter=closed_list.begin(); iter != closed_list.end(); ++iter )
-if(*iter==wskaznik->neighbour)
-tmp1 = true;
+for(iter=closed_list.begin(); iter != closed_list.end(); ++iter )
+if(*iter==wskaznik->neighbour) tmp1 = true;
 for( iter=open_list.begin(); iter != open_list.end(); ++iter )
-if(*iter==wskaznik->neighbour)
-tmp2 = true;
+if(*iter==wskaznik->neighbour) tmp2 = true;
 if(tmp1) {}
 else if(!tmp2)
 {
 open_list.push_back(wskaznik->neighbour);
-this->lista[wskaznik->neighbour]->rodzic = vert;
-this->lista[wskaznik->neighbour]->distance = wskaznik->koszt;
-this->lista[wskaznik->neighbour]->szac = (this->lista[wskaznik->neighbour]->szac+wskaznik->koszt)/1.5;
-this->lista[wskaznik->neighbour]->suma = this->lista[wskaznik->neighbour]->szac+
+this->lista[wskaznik->neighbour]->rodzic = vert; this->lista[wskaznik->neighbour]->distance = wskaznik->koszt;
+this->lista[wskaznik->neighbour]->szac = (this->lista[wskaznik->neighbour]->szac+wskaznik->koszt)/1.5; this->lista[wskaznik->neighbour]->suma = this->lista[wskaznik->neighbour]->szac+
 this->lista[wskaznik->neighbour]->distance;
 }
 else
@@ -287,9 +317,7 @@ else
 tmp = this->lista[wskaznik->neighbour]->distance + wskaznik->koszt;
 if(tmp<this->lista[wskaznik->neighbour]->distance)
 {
-this->lista[wskaznik->neighbour]->rodzic = vert;
-this->lista[wskaznik->neighbour]->distance = tmp;
-this->lista[wskaznik->neighbour]->suma = this->lista[wskaznik->neighbour]->szac+
+this->lista[wskaznik->neighbour]->rodzic = vert; this->lista[wskaznik->neighbour]->distance = tmp; this->lista[wskaznik->neighbour]->suma = this->lista[wskaznik->neighbour]->szac+
 this->lista[wskaznik->neighbour]->distance;
 }
 }

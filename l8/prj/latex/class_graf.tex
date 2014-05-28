@@ -1,0 +1,266 @@
+\hypertarget{class_graf}{\section{\-Dokumentacja klasy \-Graf}
+\label{class_graf}\index{\-Graf@{\-Graf}}
+}
+
+
+\-Klasa \hyperlink{class_graf}{\-Graf} wykorzystywana w programie.  
+
+
+
+
+{\ttfamily \#include $<$graf.\-hh$>$}
+
+\subsection*{\-Komponenty}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_graf_1_1node}{node}
+\begin{DoxyCompactList}\small\item\em \-Struktura należąca do klasy \hyperlink{class_graf}{\-Graf}, pozwalająca na realizację algorytmu \-A$\ast$, poprzez zmianę stałych, które pełnią rolę funkcji heurystycznej. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_graf_1_1pathfind}{pathfind}
+\begin{DoxyCompactList}\small\item\em \-Struktura należąca do klasy \hyperlink{class_graf}{\-Graf}, pozwalająca na realizację algorytmu \-A$\ast$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_graf_af6a4f39972b6986f6cb16c034ad3b5a2}{czy\-\_\-sasiad} (int \-V1, int \-V2)
+\begin{DoxyCompactList}\small\item\em \-Funkcja pozwala na sprawdzenie czy podane wierzchołki sąsiadują ze sobą \end{DoxyCompactList}\item 
+void \hyperlink{class_graf_a5febb3067d14f40df0f8bdadd76b12f9}{sasiedztwo} (int \-V)
+\begin{DoxyCompactList}\small\item\em \-Funkcja pozwala na wypisanie sąsiadów podanego wierzchołka. \end{DoxyCompactList}\item 
+void \hyperlink{class_graf_a062352d1e08dd505152ba042d824b561}{dodaj\-\_\-wierzcholek} (int \-V)
+\begin{DoxyCompactList}\small\item\em \-Funkcja pozwala dodać wierzchołek do listy. \end{DoxyCompactList}\item 
+void \hyperlink{class_graf_ad5550f6b3a7d63f78685366814cb4c84}{dodaj\-\_\-krawedz} (int \-V1, int \-V2, int waga)
+\begin{DoxyCompactList}\small\item\em \-Funkcja pozwala dodać krawędź \end{DoxyCompactList}\item 
+void \hyperlink{class_graf_a1c64da7079c6b41e13484f4170b02cb8}{usun\-\_\-krawedz} (int \-V1, int \-V2)
+\begin{DoxyCompactList}\small\item\em \-Funkcja pozwala usunąć podaną krawędź \end{DoxyCompactList}\item 
+void \hyperlink{class_graf_a3e9fe0a7d22f2bad4a3d5fd325acfda1}{usun\-\_\-wierzcholek} (int \-V)
+\begin{DoxyCompactList}\small\item\em \-Funkcja pozwala usunąć podany wierzchołek. \end{DoxyCompactList}\item 
+void \hyperlink{class_graf_a3a084b33cfcfa17bbfc05570043aaab2}{wyswietl} ()
+\begin{DoxyCompactList}\small\item\em \-Funkcja pozwala wyświetlić graf w postaci listy sąsiadów. \end{DoxyCompactList}\item 
+void \hyperlink{class_graf_a77cbab2fc81e4e020bb49df221ae11ed}{\-Depth} (int v, int \-Vend, bool visited\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em \-Funkcja pomocnicza przy przeszukiwaniu w głąb. \end{DoxyCompactList}\item 
+void \hyperlink{class_graf_ad33f90762984cbbb801fa2fb713291df}{\-D\-F\-S} (int \-V, int \-Vend)
+\begin{DoxyCompactList}\small\item\em \-Wywołanie tej funkcji rozpoczyna trawersację grafu metodą w głąb. \end{DoxyCompactList}\item 
+void \hyperlink{class_graf_aee35be636fa869476f31ce943e60c258}{\-B\-F\-S} (int \-V, int \-Vend)
+\begin{DoxyCompactList}\small\item\em \-Funkcja pozwala na przeszukiwanie grafu wszerz. \end{DoxyCompactList}\item 
+void \hyperlink{class_graf_afb0ee9f4563a8af2225011c8e9d54e15}{add\-\_\-node} (int \-V)
+\begin{DoxyCompactList}\small\item\em \-Funkcja pozwala na utworzenie węzła. \end{DoxyCompactList}\item 
+void \hyperlink{class_graf_addcfa2db3cee415f8eaf8e86059fd470}{add\-\_\-edge} (int \-V1, int \-V2, int c)
+\begin{DoxyCompactList}\small\item\em \-Funkcja pozwala na dodanie krawędzi uwzględniając jej wagę \end{DoxyCompactList}\item 
+int \hyperlink{class_graf_a9682ba6a2264fed3877dc9b61d94f807}{\-A\-\_\-star} (int \-V1, int \-V2)
+\begin{DoxyCompactList}\small\item\em \-Funkcja rozpoczynająca algorytm \-A$\ast$. \end{DoxyCompactList}\item 
+\hyperlink{class_graf_a03519ff2cdfac2ac75643ccebeb21c13}{\-Graf} (int wielkosc)
+\begin{DoxyCompactList}\small\item\em \-Konstruktor tworzy listę przy inicjalizacji obiektu klasy \hyperlink{class_graf}{\-Graf}. \end{DoxyCompactList}\item 
+\hyperlink{class_graf_a4ff3904fd04f367ac0219b52719c567e}{$\sim$\-Graf} ()
+\begin{DoxyCompactList}\small\item\em \-Destruktor usuwa utworzoną wcześniej listę \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Atrybuty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_graf_a673185b62d4c232bcbbc0200e95e7481}{int {\bfseries \-V}}\label{class_graf_a673185b62d4c232bcbbc0200e95e7481}
+
+\item 
+\hypertarget{class_graf_a30dc3bf4726fbd2d056c98f15080b236}{int {\bfseries \-E}}\label{class_graf_a30dc3bf4726fbd2d056c98f15080b236}
+
+\item 
+\hypertarget{class_graf_adf576dd4fd3cb35f4328a66befaa9c7a}{vector$<$ \hyperlink{class_wierzcholek}{\-Wierzcholek} $>$ $\ast$ {\bfseries lista\-\_\-sasiadujaca}}\label{class_graf_adf576dd4fd3cb35f4328a66befaa9c7a}
+
+\item 
+\hypertarget{class_graf_aa2aa8d86ccd549a6122b1eafd6dd5c45}{vector$<$ int $>$ $\ast$ {\bfseries lista\-\_\-sasiedztwa}}\label{class_graf_aa2aa8d86ccd549a6122b1eafd6dd5c45}
+
+\item 
+\hypertarget{class_graf_a173c66e39763a2c0a856ea22a128f18d}{vector$<$ \hyperlink{struct_graf_1_1node}{node} $\ast$ $>$ {\bfseries lista}}\label{class_graf_a173c66e39763a2c0a856ea22a128f18d}
+
+\item 
+\hypertarget{class_graf_ae306515e0069fa3882d9f5ae02db11ec}{int {\bfseries nodes}}\label{class_graf_ae306515e0069fa3882d9f5ae02db11ec}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Opis szczegółowy}
+\-Klasa \hyperlink{class_graf}{\-Graf} wykorzystywana w programie. 
+
+
+
+\subsection{\-Dokumentacja konstruktora i destruktora}
+\hypertarget{class_graf_a03519ff2cdfac2ac75643ccebeb21c13}{\index{\-Graf@{\-Graf}!\-Graf@{\-Graf}}
+\index{\-Graf@{\-Graf}!Graf@{\-Graf}}
+\subsubsection[{\-Graf}]{\setlength{\rightskip}{0pt plus 5cm}\-Graf\-::\-Graf (
+\begin{DoxyParamCaption}
+\item[{int}]{wielkosc}
+\end{DoxyParamCaption}
+)}}\label{class_graf_a03519ff2cdfac2ac75643ccebeb21c13}
+
+
+\-Konstruktor tworzy listę przy inicjalizacji obiektu klasy \hyperlink{class_graf}{\-Graf}. 
+
+\hypertarget{class_graf_a4ff3904fd04f367ac0219b52719c567e}{\index{\-Graf@{\-Graf}!$\sim$\-Graf@{$\sim$\-Graf}}
+\index{$\sim$\-Graf@{$\sim$\-Graf}!Graf@{\-Graf}}
+\subsubsection[{$\sim$\-Graf}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Graf\-::$\sim$\-Graf} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_graf_a4ff3904fd04f367ac0219b52719c567e}
+
+
+\-Destruktor usuwa utworzoną wcześniej listę 
+
+
+
+\subsection{\-Dokumentacja funkcji składowych}
+\hypertarget{class_graf_a9682ba6a2264fed3877dc9b61d94f807}{\index{\-Graf@{\-Graf}!\-A\-\_\-star@{\-A\-\_\-star}}
+\index{\-A\-\_\-star@{\-A\-\_\-star}!Graf@{\-Graf}}
+\subsubsection[{\-A\-\_\-star}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Graf\-::\-A\-\_\-star} (
+\begin{DoxyParamCaption}
+\item[{int}]{\-V1, }
+\item[{int}]{\-V2}
+\end{DoxyParamCaption}
+)}}\label{class_graf_a9682ba6a2264fed3877dc9b61d94f807}
+
+
+\-Funkcja rozpoczynająca algorytm \-A$\ast$. 
+
+\hypertarget{class_graf_addcfa2db3cee415f8eaf8e86059fd470}{\index{\-Graf@{\-Graf}!add\-\_\-edge@{add\-\_\-edge}}
+\index{add\-\_\-edge@{add\-\_\-edge}!Graf@{\-Graf}}
+\subsubsection[{add\-\_\-edge}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Graf\-::add\-\_\-edge} (
+\begin{DoxyParamCaption}
+\item[{int}]{\-V1, }
+\item[{int}]{\-V2, }
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}}\label{class_graf_addcfa2db3cee415f8eaf8e86059fd470}
+
+
+\-Funkcja pozwala na dodanie krawędzi uwzględniając jej wagę 
+
+\hypertarget{class_graf_afb0ee9f4563a8af2225011c8e9d54e15}{\index{\-Graf@{\-Graf}!add\-\_\-node@{add\-\_\-node}}
+\index{add\-\_\-node@{add\-\_\-node}!Graf@{\-Graf}}
+\subsubsection[{add\-\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Graf\-::add\-\_\-node} (
+\begin{DoxyParamCaption}
+\item[{int}]{\-V}
+\end{DoxyParamCaption}
+)}}\label{class_graf_afb0ee9f4563a8af2225011c8e9d54e15}
+
+
+\-Funkcja pozwala na utworzenie węzła. 
+
+\hypertarget{class_graf_aee35be636fa869476f31ce943e60c258}{\index{\-Graf@{\-Graf}!\-B\-F\-S@{\-B\-F\-S}}
+\index{\-B\-F\-S@{\-B\-F\-S}!Graf@{\-Graf}}
+\subsubsection[{\-B\-F\-S}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Graf\-::\-B\-F\-S} (
+\begin{DoxyParamCaption}
+\item[{int}]{\-V, }
+\item[{int}]{\-Vend}
+\end{DoxyParamCaption}
+)}}\label{class_graf_aee35be636fa869476f31ce943e60c258}
+
+
+\-Funkcja pozwala na przeszukiwanie grafu wszerz. 
+
+\hypertarget{class_graf_af6a4f39972b6986f6cb16c034ad3b5a2}{\index{\-Graf@{\-Graf}!czy\-\_\-sasiad@{czy\-\_\-sasiad}}
+\index{czy\-\_\-sasiad@{czy\-\_\-sasiad}!Graf@{\-Graf}}
+\subsubsection[{czy\-\_\-sasiad}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Graf\-::czy\-\_\-sasiad} (
+\begin{DoxyParamCaption}
+\item[{int}]{\-V1, }
+\item[{int}]{\-V2}
+\end{DoxyParamCaption}
+)}}\label{class_graf_af6a4f39972b6986f6cb16c034ad3b5a2}
+
+
+\-Funkcja pozwala na sprawdzenie czy podane wierzchołki sąsiadują ze sobą 
+
+\hypertarget{class_graf_a77cbab2fc81e4e020bb49df221ae11ed}{\index{\-Graf@{\-Graf}!\-Depth@{\-Depth}}
+\index{\-Depth@{\-Depth}!Graf@{\-Graf}}
+\subsubsection[{\-Depth}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Graf\-::\-Depth} (
+\begin{DoxyParamCaption}
+\item[{int}]{\-V, }
+\item[{int}]{\-Vend, }
+\item[{bool}]{visited\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{class_graf_a77cbab2fc81e4e020bb49df221ae11ed}
+
+
+\-Funkcja pomocnicza przy przeszukiwaniu w głąb. 
+
+\hypertarget{class_graf_ad33f90762984cbbb801fa2fb713291df}{\index{\-Graf@{\-Graf}!\-D\-F\-S@{\-D\-F\-S}}
+\index{\-D\-F\-S@{\-D\-F\-S}!Graf@{\-Graf}}
+\subsubsection[{\-D\-F\-S}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Graf\-::\-D\-F\-S} (
+\begin{DoxyParamCaption}
+\item[{int}]{\-V, }
+\item[{int}]{\-Vend}
+\end{DoxyParamCaption}
+)}}\label{class_graf_ad33f90762984cbbb801fa2fb713291df}
+
+
+\-Wywołanie tej funkcji rozpoczyna trawersację grafu metodą w głąb. 
+
+\hypertarget{class_graf_ad5550f6b3a7d63f78685366814cb4c84}{\index{\-Graf@{\-Graf}!dodaj\-\_\-krawedz@{dodaj\-\_\-krawedz}}
+\index{dodaj\-\_\-krawedz@{dodaj\-\_\-krawedz}!Graf@{\-Graf}}
+\subsubsection[{dodaj\-\_\-krawedz}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Graf\-::dodaj\-\_\-krawedz} (
+\begin{DoxyParamCaption}
+\item[{int}]{\-V1, }
+\item[{int}]{\-V2, }
+\item[{int}]{waga}
+\end{DoxyParamCaption}
+)}}\label{class_graf_ad5550f6b3a7d63f78685366814cb4c84}
+
+
+\-Funkcja pozwala dodać krawędź 
+
+\hypertarget{class_graf_a062352d1e08dd505152ba042d824b561}{\index{\-Graf@{\-Graf}!dodaj\-\_\-wierzcholek@{dodaj\-\_\-wierzcholek}}
+\index{dodaj\-\_\-wierzcholek@{dodaj\-\_\-wierzcholek}!Graf@{\-Graf}}
+\subsubsection[{dodaj\-\_\-wierzcholek}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Graf\-::dodaj\-\_\-wierzcholek} (
+\begin{DoxyParamCaption}
+\item[{int}]{\-V}
+\end{DoxyParamCaption}
+)}}\label{class_graf_a062352d1e08dd505152ba042d824b561}
+
+
+\-Funkcja pozwala dodać wierzchołek do listy. 
+
+\hypertarget{class_graf_a5febb3067d14f40df0f8bdadd76b12f9}{\index{\-Graf@{\-Graf}!sasiedztwo@{sasiedztwo}}
+\index{sasiedztwo@{sasiedztwo}!Graf@{\-Graf}}
+\subsubsection[{sasiedztwo}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Graf\-::sasiedztwo} (
+\begin{DoxyParamCaption}
+\item[{int}]{\-V}
+\end{DoxyParamCaption}
+)}}\label{class_graf_a5febb3067d14f40df0f8bdadd76b12f9}
+
+
+\-Funkcja pozwala na wypisanie sąsiadów podanego wierzchołka. 
+
+\hypertarget{class_graf_a1c64da7079c6b41e13484f4170b02cb8}{\index{\-Graf@{\-Graf}!usun\-\_\-krawedz@{usun\-\_\-krawedz}}
+\index{usun\-\_\-krawedz@{usun\-\_\-krawedz}!Graf@{\-Graf}}
+\subsubsection[{usun\-\_\-krawedz}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Graf\-::usun\-\_\-krawedz} (
+\begin{DoxyParamCaption}
+\item[{int}]{\-V1, }
+\item[{int}]{\-V2}
+\end{DoxyParamCaption}
+)}}\label{class_graf_a1c64da7079c6b41e13484f4170b02cb8}
+
+
+\-Funkcja pozwala usunąć podaną krawędź 
+
+\hypertarget{class_graf_a3e9fe0a7d22f2bad4a3d5fd325acfda1}{\index{\-Graf@{\-Graf}!usun\-\_\-wierzcholek@{usun\-\_\-wierzcholek}}
+\index{usun\-\_\-wierzcholek@{usun\-\_\-wierzcholek}!Graf@{\-Graf}}
+\subsubsection[{usun\-\_\-wierzcholek}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Graf\-::usun\-\_\-wierzcholek} (
+\begin{DoxyParamCaption}
+\item[{int}]{\-V}
+\end{DoxyParamCaption}
+)}}\label{class_graf_a3e9fe0a7d22f2bad4a3d5fd325acfda1}
+
+
+\-Funkcja pozwala usunąć podany wierzchołek. 
+
+\hypertarget{class_graf_a3a084b33cfcfa17bbfc05570043aaab2}{\index{\-Graf@{\-Graf}!wyswietl@{wyswietl}}
+\index{wyswietl@{wyswietl}!Graf@{\-Graf}}
+\subsubsection[{wyswietl}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Graf\-::wyswietl} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_graf_a3a084b33cfcfa17bbfc05570043aaab2}
+
+
+\-Funkcja pozwala wyświetlić graf w postaci listy sąsiadów. 
+
+
+
+\-Dokumentacja dla tej klasy została wygenerowana z plików\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{graf_8hh}{graf.\-hh}\item 
+\hyperlink{graf_8cpp}{graf.\-cpp}\end{DoxyCompactItemize}
