@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Simplex: Dokumentacja pliku sim.cpp</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Simplex
+   &#160;<span id="projectnumber">beta</span>
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Wygenerowano przez Doxygen 1.7.6.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Strona&#160;główna</span></a></li>
+      <li><a href="annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;plików</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#typedef-members">Definicje typów</a> &#124;
+<a href="#func-members">Funkcje</a> &#124;
+<a href="#var-members">Zmienne</a>  </div>
+  <div class="headertitle">
+<div class="title">Dokumentacja pliku sim.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Metody klasy sim.  
+<a href="#details">Więcej...</a></p>
+<div class="textblock"><code>#include &lt;cmath&gt;</code><br/>
+<code>#include &lt;cstdlib&gt;</code><br/>
+<code>#include &lt;iostream&gt;</code><br/>
+<code>#include &quot;<a class="el" href="sim_8hh_source.html">sim.hh</a>&quot;</code><br/>
+</div><table class="memberdecls">
+<tr><td colspan="2"><h2><a name="typedef-members"></a>
+Definicje typów</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a889ee9d87993d788763976dea27b5e56"></a><!-- doxytag: member="sim.cpp::MAT" ref="a889ee9d87993d788763976dea27b5e56" args="[25][25]" -->
+typedef double&#160;</td><td class="memItemRight" valign="bottom"><b>MAT</b> [25][25]</td></tr>
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Funkcje</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3e9de89588fe863f3cda41747e697a65"></a><!-- doxytag: member="sim.cpp::simp1" ref="a3e9de89588fe863f3cda41747e697a65" args="(MAT, int, int *, int, int, int *, double *)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>simp1</b> (MAT, int, int *, int, int, int *, double *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a401bd2fe98e9c04af3b4841d59bab5cb"></a><!-- doxytag: member="sim.cpp::simp2" ref="a401bd2fe98e9c04af3b4841d59bab5cb" args="(MAT, int, int, int *, int, int *, int, double *)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>simp2</b> (MAT, int, int, int *, int, int *, int, double *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abe12d3bf3f34438935dc0016b2bc05f1"></a><!-- doxytag: member="sim.cpp::simp3" ref="abe12d3bf3f34438935dc0016b2bc05f1" args="(MAT, int, int, int, int)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>simp3</b> (MAT, int, int, int, int)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a32ea4090b3d243790c8d473697de44bd"></a><!-- doxytag: member="sim.cpp::simplx" ref="a32ea4090b3d243790c8d473697de44bd" args="(MAT a, int m, int n, int m1, int m2, int m3, int *icase, int *izrov, int *iposv)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>simplx</b> (MAT a, int m, int n, int m1, int m2, int m3, int *icase, int *izrov, int *iposv)</td></tr>
+<tr><td colspan="2"><h2><a name="var-members"></a>
+Zmienne</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ace63b68fea4070104433c81319d246a6"></a><!-- doxytag: member="sim.cpp::A" ref="ace63b68fea4070104433c81319d246a6" args="" -->
+MAT&#160;</td><td class="memItemRight" valign="bottom"><b>A</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae83e08ef91edcd6b7372b61ae5dd8c30"></a><!-- doxytag: member="sim.cpp::IPOSV" ref="ae83e08ef91edcd6b7372b61ae5dd8c30" args="[25]" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>IPOSV</b> [25]</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3f3d0c5ca94bfb4c1ec8c75eec5fe2f4"></a><!-- doxytag: member="sim.cpp::IZROV" ref="a3f3d0c5ca94bfb4c1ec8c75eec5fe2f4" args="[25]" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>IZROV</b> [25]</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acb559820d9ca11295b4500f179ef6392"></a><!-- doxytag: member="sim.cpp::i" ref="acb559820d9ca11295b4500f179ef6392" args="" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>i</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a37d972ae0b47b9099e30983131d31916"></a><!-- doxytag: member="sim.cpp::j" ref="a37d972ae0b47b9099e30983131d31916" args="" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>j</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a98c1868ebc3ea1101030b1059963d2c2"></a><!-- doxytag: member="sim.cpp::ICASE" ref="a98c1868ebc3ea1101030b1059963d2c2" args="" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>ICASE</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7722c8ecbb62d99aee7ce68b1752f337"></a><!-- doxytag: member="sim.cpp::N" ref="a7722c8ecbb62d99aee7ce68b1752f337" args="" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>N</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5e78dbd5fd0fc01ba7b98dd15e27221e"></a><!-- doxytag: member="sim.cpp::M" ref="a5e78dbd5fd0fc01ba7b98dd15e27221e" args="" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>M</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7a2aaeb8c0218468f3775cedc6d0087c"></a><!-- doxytag: member="sim.cpp::M1" ref="a7a2aaeb8c0218468f3775cedc6d0087c" args="" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>M1</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4ae62474468edbb5f37cd79ee5e7ca90"></a><!-- doxytag: member="sim.cpp::M2" ref="a4ae62474468edbb5f37cd79ee5e7ca90" args="" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>M2</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1b0d06f043612b284f80743aa186de4c"></a><!-- doxytag: member="sim.cpp::M3" ref="a1b0d06f043612b284f80743aa186de4c" args="" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>M3</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a228eb5e837a644887ac6e7bab3f42485"></a><!-- doxytag: member="sim.cpp::R" ref="a228eb5e837a644887ac6e7bab3f42485" args="" -->
+double&#160;</td><td class="memItemRight" valign="bottom"><b>R</b></td></tr>
+</table>
+<hr/><a name="details" id="details"></a><h2>Opis szczegółowy</h2>
+<div class="textblock"><p>Metody klasy sim. </p>
+</div></div><!-- contents -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klasy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Pliki</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funkcje</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano Wed May 28 2014 04:45:19 dla Simplex programem &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>
