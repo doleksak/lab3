@@ -65,9 +65,10 @@ cout<<endl;
        
        
        
-        cout<<"\n";
+        cout<<endl;
        
-       
+       /* Losujemy indeksy, w wektorze min zamieniamy 0 na 1, gdy ustawiamy tam mine, gdy indeks sie powtorzy, losujemy
+        jeszcze raz */
         for(int i=0;i<count;i++)
         {
             x=rand();
@@ -85,7 +86,7 @@ cout<<endl;
        
        
        
-       //Wypełniamy znakiem M, gdy jest mina
+       //Wstawiamy w wektor znaków litere M, gdy jest mina
         for(int i=0;i<261;i++)
         {
             if(mines[i]!=0)
@@ -94,8 +95,8 @@ cout<<endl;
        
        
         x=0;
-       //Wypełniamy liczbami określającymi sąsiedztwo min
-        if(chars[1]!='M')   //górna lewa
+       //Wypełniamy wektor nums liczbami określającymi sąsiedztwo min
+        if(chars[1]!='M')   //górny lewy corner
         {
             if(chars[2]=='M')
             {
@@ -111,7 +112,7 @@ cout<<endl;
             }
         }
        
-        if(chars[26]!='M')  //górna prawa
+        if(chars[26]!='M')  //górny prawy corner
         {
             if(chars[25]=='M')
             {
@@ -127,7 +128,7 @@ cout<<endl;
             }
         }
        
-        if(chars[235]!='M') //dolna lewa
+        if(chars[235]!='M') //dolny lewy corner
         {
             if(chars[209]=='M')
             {
@@ -143,7 +144,7 @@ cout<<endl;
             }
         }
        
-        if(chars[260]!='M') //dolna prawa
+        if(chars[260]!='M') //dolny prawy corner
         {
             if(chars[233]=='M')
             {
@@ -159,7 +160,7 @@ cout<<endl;
             }
         }
        
-        for(int i=2;i<26;i++)   //górna
+        for(int i=2;i<26;i++)   //górny wiersz
         {
             if(chars[i]!='M')
             {
@@ -176,7 +177,7 @@ cout<<endl;
             }
         }
        
-        for(int i=236;i<260;i++)   //dolna
+        for(int i=236;i<260;i++)   //dolny wiersz
         {
             if(chars[i]!='M')
             {
@@ -193,7 +194,7 @@ cout<<endl;
             }
         }
        
-        for(int i=26;i<210;i++)   //lewa
+        for(int i=26;i<210;i++)   //lewa kolumna
         {
             if(i%26==1&&chars[i]!='M')
             {
@@ -210,7 +211,7 @@ cout<<endl;
             }
         }
        
-        for(int i=50;i<235;i++)   //prawa
+        for(int i=50;i<235;i++)   //prawa kolumna
         {
             if(i%26==0&&chars[i]!='M')
             {
@@ -227,7 +228,7 @@ cout<<endl;
             }
         }
        
-        for(int i=28;i<234;i++)   //pozostale
+        for(int i=28;i<234;i++)   //pozostale pola
         {
             if(i%26!=0&&i%26!=1&&chars[i]!='M')
             {
@@ -249,7 +250,7 @@ cout<<endl;
                     nums[i]++;
             }
         }
-       //zamieniamy wartości na chary do wyświetlenia
+       //kopiujemy wartości z wektora nums do wektora chars
         for(int i=0;i<261;i++)
         {
             if(nums[i]==1)
@@ -270,18 +271,18 @@ cout<<endl;
                 chars[i]='8';
         }
        
-       //głowna sekwencja programu po wypełnieniu planszy
-    while(k!=1) ///////////////////(1)
+       //głowna petla
+    while(k!=1)
     {
        
        
-        cout<<"\n\nPozostało min: "<<count<<"\n\n    a b c d e f g h i j k l m n o p q r s t u v w x y z\n    ---------------------------------------------------\n 0| ";
+        cout<<"\n\nDostepnych flag: "<<count<<"\n\n    a b c d e f g h i j k l m n o p q r s t u v w x y z\n    ---------------------------------------------------\n 0| ";
         num=1;
         for(int i=0;i<260;i++)
         {
-            if(cover[i+1]=='+')            
+            if(cover[i+1]=='+')                     //wyswietlamy na planszy +, zgodnie z zawartoscia wektora cover            
                 cout<<cover[i+1]<<" ";
-            else if (chars[i+1]=='M')
+            else if (chars[i+1]=='M')               //jezeli zamiast liczby otaczajacych min trafimy na mine, konczymy gre
             {
     cout<<endl;
 cout<<"--------------------------------------------------------------------------------"<<endl;
@@ -316,10 +317,10 @@ cout<<"-------------------------------------------------------------------------
                     break;
             }
             else
-                cout<<chars[i+1]<<" ";
+                cout<<chars[i+1]<<" ";  //jezeli nie ma miny, wyswietlamy liczbe otaczajacych min
            
            
-            if(i%26==25&&num!=10)
+            if(i%26==25&&num!=10)   //numeracja wierszy
             {
                 cout<<"|"<<num-1<<"\n "<<num<<"| ";
                 num++;
@@ -335,17 +336,17 @@ cout<<"-------------------------------------------------------------------------
        }
      cout<<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 
-        flag='n';
-        if(char1=='F')
+        flag='n';   //nie ma flagi
+        if(char1=='F')          //Gdy pierwszy znak jest F, pobieramy dodatkowy znak i ustawiamy, ze mamy mniej flag dost. w grze
         {
             cin>>char3;
             char1=char2;
             char2=char3;
-            flag='y';
+            flag='y'; //ustawiamy flage
             count--;
         }
             wait=1;
-        if(char1=='a')
+        if(char1=='a')          //Zmieniamy podany znak na numer kolumny
             extra1=1;
         else if(char1=='b')
             extra1=2;
@@ -398,7 +399,7 @@ cout<<"-------------------------------------------------------------------------
         else if(char1=='z')
             extra1=26;
        
-        if(char2=='0')
+        if(char2=='0')              //Zmieniamy podany znak na numer wiersza
             extra2=0;
         else if(char2=='1')
             extra2=1;
@@ -419,12 +420,12 @@ cout<<"-------------------------------------------------------------------------
         else if(char2=='9')
             extra2=9;
      
-            theone=extra1+26*extra2;
+            theone=extra1+26*extra2;    //teraz znamy indeks wektora odpowiadajacy miejscu na planszy
            
        
         if(flag=='y')
         {
-            chars[theone]='F';
+            chars[theone]='F';          //jezeli ustawilismy wczesniej flage, wstawiamy do wektora chars litere F
         }
             cover[theone]='-';
            
@@ -434,9 +435,9 @@ cout<<"-------------------------------------------------------------------------
     {
            
        
-        if(chars[theone]=='0')
+        if(chars[theone]=='0')  //jezeli wartosc pola = 0
         {
-            if(theone==1)   //top left
+            if(theone==1)   //gorny lewy corner
             {
                
                 if(nums[2]==0&&cover[2]=='+')
@@ -458,7 +459,7 @@ cout<<"-------------------------------------------------------------------------
                 }
                     cover[28]='-';
             }
-            if(theone==26&&cover[26]=='+')  //top right
+            if(theone==26&&cover[26]=='+')  //gorny prawy
             {
                 if(nums[25]==0&&cover[25]=='+')
                 {
@@ -479,7 +480,7 @@ cout<<"-------------------------------------------------------------------------
                 }
                     cover[52]='-';
             }
-            if(theone==235&&cover[235]=='+') //bottom left
+            if(theone==235&&cover[235]=='+') //dolny lewy
             {
                 if(nums[209]==0&&cover[209]=='+')
                 {
@@ -503,7 +504,7 @@ cout<<"-------------------------------------------------------------------------
                     cover[236]='-';
                
             }
-            if(theone==260&&cover[260]=='+') //bottom right
+            if(theone==260&&cover[260]=='+') //dolny prawy
             {
                 if(nums[233]==0&&cover[233]=='+')
                 {
@@ -564,7 +565,7 @@ cout<<"-------------------------------------------------------------------------
                    
                 }
             }
-            for(int i=236;i<260;i++)   //bottom
+            for(int i=236;i<260;i++)   //dolne
             {
                 if(theone==i)
                 {
@@ -602,7 +603,7 @@ cout<<"-------------------------------------------------------------------------
                         cover[i-27]='-';
                 }
             }
-            for(int i=26;i<210;i++)   //left
+            for(int i=26;i<210;i++)   //lewe
             {
                 if(i%26==1&&theone==i)
                 {
@@ -639,7 +640,7 @@ cout<<"-------------------------------------------------------------------------
                         cover[i+27]='-';
                 }
             }
-            for(int i=50;i<235;i++)   //right
+            for(int i=50;i<235;i++)   //prawe
             {
                 if(i%26==0&&theone==i)
                 {
@@ -675,7 +676,7 @@ cout<<"-------------------------------------------------------------------------
                         cover[i+26]='-';
                 }
             }
-            for(int i=28;i<234;i++)   //all else
+            for(int i=28;i<234;i++)   //pozostale
             {
                 if(i%26!=0&&i%26!=1&&theone==i)
                 {
